@@ -1,2 +1,5 @@
-for i in range(10):
-    print("Placeholder")
+import pandas as pd
+import ccxt 
+import time
+
+print(ccxt.exchanges)
