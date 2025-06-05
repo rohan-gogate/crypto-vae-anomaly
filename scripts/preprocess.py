@@ -16,5 +16,5 @@ sequences = []
 for i in range(len(returns) - window_size):
     sequences.append(returns[i:i + window_size])
 sequences = np.array(sequences)
-plt.plot(sequences[0]); plt.show()
+#now we have sequences of log returns as a 2d numpy array
 
