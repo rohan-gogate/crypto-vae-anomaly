@@ -1,13 +1,20 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 df = pd.read_csv("data/btc_1m.csv",index_col="timestamp", parse_dates=True)
 log_returns = np.log(df["close"]).diff()
-df["log_returns"] = log_returns
+mean = log_returns.mean()
+std = log_returns.std()
+log_returns_normalized = (log_returns - mean)/std
+df["log_returns_normalized"] = log_returns_normalized
 df = df.dropna()
-print(df['close'].head(10))
-print(df['close'].describe())
-import matplotlib.pyplot as plt
-df['log_returns'].plot()
-plt.title("Log Returns")
-plt.show()
+
+window_size = 60
+returns = np.array(df["log_returns_normalized"].values)
+sequences = []
+for i in range(len(returns) - window_size):
+    sequences.append(returns[i:i + window_size])
+sequences = np.array(sequences)
+plt.plot(sequences[0]); plt.show()
+
