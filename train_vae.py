@@ -40,6 +40,7 @@ for epoch in range(epochs):
     print(f"Epoch {epoch+1}/{epochs}, Loss: {total_loss:.4f}, MSE: {total_mse:.4f}, KL: {total_kl:.4f}")
     history.append((epoch + 1, total_loss, total_mse, total_kl))
 
+torch.save(model.state_dict(), "models/vae_trained.pth")
 
 df = pd.DataFrame(history, columns=["epoch", "loss", "mse", "kl"])
 df.to_csv("training_log.csv", index=False)
