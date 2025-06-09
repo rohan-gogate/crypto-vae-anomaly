@@ -47,3 +47,4 @@ df = pd.DataFrame({
 })
 df.to_csv("data/anomalies.csv", index=False)
 print("Saved anomalies to data/anomalies.csv")
+np.save("data/anomaly_indices.npy", anomaly_indices)

@@ -16,6 +16,6 @@ sequences = []
 for i in range(len(returns) - window_size):
     sequences.append(returns[i:i + window_size])
 sequences = np.array(sequences)
-np.save("data/sequences.npy", sequences)
-#now we have sequences of log returns as a 2d numpy array
-
+np.save("data/sequences.npy", sequences) #now we have sequences of log returns as a 2d numpy array
+close_prices = df["close"].values
+np.save("data/close_prices.npy", close_prices) #will need later for backtesting
