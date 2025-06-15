@@ -65,6 +65,7 @@ plt.xlabel("Time")
 plt.ylabel("Price")
 plt.legend()
 plt.grid(True)
+plt.savefig("figures/SMA.png", dpi=300, bbox_inches='tight')
 plt.show()
 
 plt.figure(figsize=(12, 4))
@@ -74,6 +75,7 @@ plt.xlabel("Time")
 plt.ylabel("Capital")
 plt.grid(True)
 plt.legend()
+plt.savefig("figures/equity_curve.png", dpi=300, bbox_inches='tight')
 plt.show()
 
 final_equity = equity_curve[-1]
