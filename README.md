@@ -63,9 +63,9 @@ The model did identify clusters of anomalies at local extrema. The trading strat
 
 ## 📎 Future Work
 
-- Try more sophisticated trading logic or risk management
+- Try more sophisticated trading logic, such as a momentum strategy, which are well suited to crypto in my opinion.
 - Experiment with other anomaly detection models (e.g., GANs, LSTMs)
-- Incorporate additional market features or multi-asset inputs
+- Compare with simpler ML models, like a standard linear regression to see if all the frills of deep learning are worth the trouble
 
 ---
 
